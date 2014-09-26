@@ -3,17 +3,21 @@ var _ = require('underscore');
 var data = [];
 
 module.exports = {
-  push: function(name, text) {
+  push: function(name, text, id) {
     data.push({
       "name": name,
-      "text": text
+      "text": text,
+      "id": id
     });
   },
   list: function() {
     return data;
   },
-  find: function() {
+  find: function(properties) {
     return _.where(data, properties);
+  },
+  getFakeID: function() {
+    return Math.round((Math.random()*Math.PI) * 1000000);
   }
 };
 
@@ -34,5 +38,5 @@ var getFakeTweet = function() {
 };
 
 for(var i=0; i<10; i++) {
-  module.exports.push(getFakeName(), getFakeTweet());
+  module.exports.push(getFakeName(), getFakeTweet(), module.exports.getFakeID());
 }

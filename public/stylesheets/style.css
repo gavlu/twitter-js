@@ -58,15 +58,17 @@ code {
   font-weight: bold;
 }
 
+.idText a{
+  font-size: 0.8em;
+  float: right;
+  color:green;
+}
+
 .tweet {
   font-size: 1.1em;
   list-style-type: none;
   margin: 1.5em 0;
   padding: 1px;
-}
-
-.tweetText {
-
 }
 
 .userName {
@@ -75,14 +77,26 @@ code {
   font-weight: bold;
 }
 
+.userName a {
+  text-decoration: none;
+  color: #346da2;
+}
+
 .profilePhoto {
   float: left;
   margin: 0 1em 0 0;
   height: 60px;
   width: 60px;
-  background-color: green;
 }
 
 .tweet span {
   color: #4d95cb;
+}
+
+#testdiv p {
+  background-color:pink;
+}
+
+#testdiv {
+  background-color:blue;
 }

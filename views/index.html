@@ -3,23 +3,35 @@
 {% block content %}
 
   <div class="page-header">
-    <h1>Welcome to Twitter.js, Nimit!</h1>
+    <h1>Welcome to Twitter.js, Gavin!</h1>
   </div>
   <div class="row">
     <div class="col-md-3">
-      <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
-      <b>Your Name</b><br>
-      100 followers
+      <img src="/images/myProfile.jpg"><br>
+      <b>Gavin Lue</b><br>
+      155 followers
     </div>
-    <div class="col-md-9">
+    <div id="tweetCol" class="col-md-9">
+      {% if show_form %}
+        <form action="/submit" method="POST">
+          <label for="name_field">Name: </label>
+          <input name="name" type="text" id="name_field" value='{{ nameVal }}'/>
+
+          <label for="text_field">Text:</label>
+          <input name="text" type="text" id="text_field" style="width: 350px;" />
+
+          <input type="submit" value="Submit" />
+        </form>
+      {% endif %}
       <h2>All Tweets</h2>
 
       <!-- display tweets here -->
       {% for tweet in tweets %}
         <ul class="tweet">
-          <div class="profilePhoto"></div>
-          <h4 class="userName">{{tweet.name}}</h4>
+          <img src="/images/catProfile.jpg" class="profilePhoto" alt="">
+          <h4 class="userName"><a href="/users/{{tweet.name}}">{{tweet.name}}</a></h4>
           <li class="tweetText">{{tweet.text}}</li>
+          <div class="idText"><a href="/users/{{tweet.name}}/tweets/{{tweet.id}}">{{tweet.id}}</a></div>
           <span>Re-tweet</span>
         </ul>
       {% endfor %}
