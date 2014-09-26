@@ -12,17 +12,15 @@
       155 followers
     </div>
     <div id="tweetCol" class="col-md-9">
-      {% if show_form %}
-        <form action="/submit" method="POST">
-          <label for="name_field">Name: </label>
-          <input name="name" type="text" id="name_field" value='{{ nameVal }}'/>
+      <form action="/submit" method="POST">
+        <label for="name_field">Name: </label>
+        <input name="name" type="text" id="name_field" value='{{ nameVal }}'/>
 
-          <label for="text_field">Text:</label>
-          <input name="text" type="text" id="text_field" style="width: 350px;" />
+        <label for="text_field">Text:</label>
+        <input name="text" type="text" id="text_field" style="width: 350px;" />
 
-          <input type="submit" value="Submit" />
-        </form>
-      {% endif %}
+        <input type="submit" value="Submit" />
+      </form>
       <h2>All Tweets</h2>
 
       <!-- display tweets here -->
