@@ -27,9 +27,9 @@
       {% for tweet in tweets %}
         <ul class="tweet">
           <img src="/images/catProfile.jpg" class="profilePhoto" alt="">
-          <h4 class="userName"><a href="/users/{{tweet.name}}">{{tweet.name}}</a></h4>
-          <li class="tweetText">{{tweet.text}}</li>
-          <div class="idText"><a href="/users/{{tweet.name}}/tweets/{{tweet.id}}">{{tweet.id}}</a></div>
+          <h4 class="userName"><a href="/users/{{tweet.User.name}}">{{tweet.User.name}}</a></h4>
+          <li class="tweetText">{{tweet.tweet}}</li>
+          <div class="idText"><a href="/users/{{tweet.User.name}}/tweets/{{tweet.id}}">{{tweet.id}}</a></div>
           <span>Re-tweet</span>
         </ul>
       {% endfor %}
