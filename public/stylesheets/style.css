@@ -51,6 +51,14 @@ code {
   width: 48px;
   content:url("http://lorempixel.com/48/48");
 }
+
+.tweetText {
+  width: 80%;
+}
+
+.tweetText a {
+  color: black;
+}
 .content {
   margin-left: 60px;
 }
@@ -125,4 +133,16 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #3871c3;
+}
+
+input[type=submit].delete {
+  background-color: #d33342;
+  height:15px;
+  font-size:0.6em;
+  border-radius: 4px;
+  float: right;
+}
+
+input[type=submit].delete:hover{
+  background-color: #9d1e2b;
 }

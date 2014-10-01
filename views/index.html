@@ -28,8 +28,10 @@
         <ul class="tweet">
           <img src="/images/catProfile.jpg" class="profilePhoto" alt="">
           <h4 class="userName"><a href="/users/{{tweet.User.name}}">{{tweet.User.name}}</a></h4>
-          <li class="tweetText">{{tweet.tweet}}</li>
-          <div class="idText"><a href="/users/{{tweet.User.name}}/tweets/{{tweet.id}}">{{tweet.id}}</a></div>
+          <li class="tweetText"><a href="/users/{{tweet.User.name}}/tweets/{{tweet.id}}">{{tweet.tweet}}</a></li>
+          <form action="/{{tweet.id}}/delete" method="POST">
+            <input class="delete" type="submit" value="Delete" />
+          </form>
           <span>Re-tweet</span>
         </ul>
       {% endfor %}

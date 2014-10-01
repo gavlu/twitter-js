@@ -22,4 +22,14 @@ router.post('/submit', function(req, res) {
 
 });
 
+router.post('/:tweetId/delete', function(req, res) {
+  var tweetId = req.params.tweetId;
+  models.Tweet.find({where: {id: tweetId}}).complete(function(err, tweet) {
+    tweet.destroy().complete(function(err, done) {
+      console.log('Deleted');
+      res.redirect('/');
+    });
+  });
+});
+
 module.exports = router;
