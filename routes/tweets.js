@@ -9,8 +9,16 @@ router.get('/:id', function(req, res) {
   var tweets = models.Tweet.findAll({include:[models.User], where: {'Tweet.id': id} }).success(function(tweets) {
     res.render('index', { title: 'Twitter.js - Posts by ' + name, nameVal: name, tweets: tweets });
   });
+});
 
-  // res.render('index', { title: 'Tweet: ' + id + ' by ' + name, tweets: list });
+router.post('/:id/delete', function(req, res) {
+  var tweetId = req.params.id;
+  models.Tweet.find({where: {id: tweetId}}).complete(function(err, tweet) {
+    tweet.destroy().complete(function(err, done) {
+      console.log('Deleted');
+      res.redirect('/');
+    });
+  });
 });
 
 module.exports = router;
